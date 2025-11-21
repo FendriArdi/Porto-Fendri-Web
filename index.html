@@ -126,6 +126,23 @@
             border-radius: 0.5rem;
             object-fit: contain; /* Ensure the image fits nicely */
         }
+        /* Style for individual job/education item */
+        .timeline-item {
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 0.5rem;
+            width: 14px;
+            height: 14px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            border: 3px solid #020617; /* Dark background color */
+        }
     </style>
 </head>
 <body class="antialiased starfield-bg">
@@ -138,6 +155,8 @@
                 <a href="#" class="text-2xl font-bold text-white tracking-tight">Portofolio Website</a>
                 <nav class="hidden md:flex space-x-8">
                     <a href="#about" class="text-gray-400 hover:text-cyan-400 transition duration-150">Expertise</a>
+                    <a href="#education" class="text-gray-400 hover:text-cyan-400 transition duration-150">Education</a>
+                    <a href="#experience" class="text-gray-400 hover:text-cyan-400 transition duration-150">Experience</a>
                     <a href="#projects" class="text-gray-400 hover:text-cyan-400 transition duration-150">Projects</a>
                     <a href="#skills" class="text-gray-400 hover:text-cyan-400 transition duration-150">Skills</a>
                     <a href="#analyzer" class="text-gray-400 hover:text-cyan-400 transition duration-150">AI Analyzer</a>
@@ -241,12 +260,70 @@
             </div>
         </section>
 
-        <!-- 3. Projects Section -->
+        <!-- 3. Education Section (UPDATED) -->
+        <section id="education" class="py-16 md:py-24 bg-slate-900/80 backdrop-blur-sm border-b border-slate-800">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-center text-white sm:text-4xl mb-10 flex items-center justify-center">
+                    <i data-lucide="graduation-cap" class="w-7 h-7 mr-3 text-cyan-400"></i> Education
+                </h2>
+
+                <div class="space-y-12">
+                    <!-- Master's Degree (Updated) -->
+                    <div class="timeline-item pb-8">
+                        <h3 class="text-2xl font-bold text-white">Master's in Information Systems Management</h3>
+                        <p class="text-xl text-cyan-400 mt-1">BINUS University (2024 - Expected Graduation 2026)</p>
+                        <p class="text-lg text-white mt-1">GPA: 3.93 / 4.00</p>
+                    </div>
+
+                    <!-- Bachelor's Degree (UPDATED) -->
+                    <div class="timeline-item">
+                        <h3 class="text-2xl font-bold text-white">Bachelor's Degree in Information System</h3>
+                        <p class="text-xl text-cyan-400 mt-1">Politeknik STMI Jakarta (2019 - 2023)</p>
+                        <p class="text-lg text-white mt-1">GPA: 3.68 / 4.00</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Experience Section (NEW) -->
+        <section id="experience" class="py-16 md:py-24 bg-slate-950/90 backdrop-blur-sm border-b border-slate-800">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-center text-white sm:text-4xl mb-10 flex items-center justify-center">
+                    <i data-lucide="briefcase" class="w-7 h-7 mr-3 text-cyan-400"></i> Professional Experience
+                </h2>
+
+                <div class="space-y-12">
+                    <!-- Experience 1: Finance Intern -->
+                    <div class="timeline-item pb-8">
+                        <h3 class="text-2xl font-bold text-white">Finance Intern</h3>
+                        <p class="text-xl font-medium text-cyan-400 mt-1">Beko Appliances Indonesia | May 2025 - Present</p>
+                        <ul class="list-disc list-inside space-y-2 text-gray-400 mt-3 ml-4">
+                            <li>Supported daily document and filing control to ensure accuracy, completeness, and compliance in financial records.</li>
+                            <li>Assisted finance team in maintaining invoice documentation workflow, reducing the risk of misplaced or late files.</li>
+                            <li>Coordinated a vendor WhatsApp blast project for payment reminders, improving vendor communication and accounts receivable management.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Experience 2: HR Intern -->
+                    <div class="timeline-item">
+                        <h3 class="text-2xl font-bold text-white">HR Intern</h3>
+                        <p class="text-xl font-medium text-cyan-400 mt-1">PT Mada Wikri Tunggal | Feb 2022 - Feb 2023</p>
+                        <ul class="list-disc list-inside space-y-2 text-gray-400 mt-3 ml-4">
+                            <li>Processed payroll and attendance data for 200+ employees using Haris HRIS and Excel, ensuring 100% on-time submission.</li>
+                            <li>Supported end-to-end onboarding process for new hires, including documentation and orientation.</li>
+                            <li>Contributed to HR digitalization efforts, improving document control and filing systems.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Projects Section (OLD #3) -->
         <section id="projects" class="py-16 md:py-24 bg-slate-900/80 backdrop-blur-sm">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-3xl font-bold text-center text-white sm:text-4xl">Featured Projects</h2>
                 <p class="mt-4 text-xl text-center text-gray-400 max-w-3xl mx-auto">
-                    Showcasing technical solutions and advanced research methodologies.
+                    Showcasing technical solutions and advanced research methodologies by focusing on <span class="font-bold text-white">problem, solution, and outcome.</span>
                 </p>
 
                 <div class="mt-12 space-y-16">
@@ -257,16 +334,22 @@
                             <div class="md:col-span-2">
                                 <h3 class="text-2xl font-bold text-cyan-400">Web Training Platform (Full-Stack)</h3>
                                 <p class="mt-2 text-lg text-gray-400">Mini Project for PT Mada Wikri Tunggal | 2022</p>
-                                <p class="mt-4 text-gray-300 text-left">
-                                    Developed a complete prototype for an internal employee training system, demonstrating end-to-end software development lifecycle and secure data handling.
-                                </p>
+                                
+                                <div class="mt-4 space-y-4">
+                                    <p class="text-gray-300 text-left">
+                                        <span class="font-bold text-cyan-300">Problem Solved:</span> Existing training was unstructured and lacked a centralized tracking mechanism for employee progress and materials, leading to administrative overhead.
+                                    </p>
+                                    <p class="text-gray-300 text-left">
+                                        <span class="font-bold text-cyan-300">Solution & Thought Process:</span> I designed and built a secure, role-based Web Training Platform prototype from scratch. This required structuring data models (users, materials, progress) and implementing <strong>robust login authentication</strong> to ensure compliance and data integrity.
+                                    </p>
+                                </div>
                                 
                                 <div class="mt-6">
-                                    <h4 class="font-semibold text-white mb-2">Key Contributions:</h4>
+                                    <h4 class="font-semibold text-cyan-300 mb-2">Technical Implementation & Outcome:</h4>
                                     <ul class="list-disc list-inside space-y-2 text-gray-400">
-                                        <li>Built secure back-end APIs using Node.js, Express, MySQL, and Prisma with robust login authentication.</li>
-                                        <li>Designed responsive front-end interface using Vite and Tailwind CSS for a seamless user experience.</li>
-                                        <li>Implemented data endpoints to manage training materials and tracking efficiently.</li>
+                                        <li><span class="font-bold text-white">Outcome:</span> Created a <strong>proof-of-concept for HR digitalization</strong>, proving a pathway to automate training assignments and centralize records.</li>
+                                        <li><span class="font-bold text-white">Back-End:</span> Built secure APIs using <strong>Node.js, Express, MySQL, and Prisma</strong> for reliable data handling and transaction management.</li>
+                                        <li><span class="font-bold text-white">Front-End:</span> Designed a modern, responsive UI with <strong>Vite and Tailwind CSS</strong> to ensure accessibility across desktop and mobile devices.</li>
                                     </ul>
                                 </div>
 
@@ -280,7 +363,7 @@
                                 </div>
                             </div>
                             
-                            <!-- Project Visualization: Web Training Platform (Updated with new screenshot) -->
+                            <!-- Project Visualization: Web Training Platform -->
                             <div class="p-4 bg-slate-900 border-2 border-cyan-600 rounded-lg shadow-inner flex items-center justify-center h-auto">
                                 <img 
                                     src="https://i.im.ge/2025/11/18/4XInVh.Screenshot-2025-11-18-104353.png" 
@@ -295,7 +378,7 @@
                     <!-- Project 2: Academic Research (Data Focus) -->
                     <div class="p-8 md:p-12 bg-slate-800 rounded-xl shadow-xl card-hover">
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
-                             <!-- Model Visualization (Updated to show both images) -->
+                             <!-- Model Visualization -->
                             <div class="order-2 md:order-1 p-4 bg-slate-900 rounded-lg shadow-inner flex flex-col items-center justify-center h-full space-y-4">
                                 <img 
                                     src="https://i.im.ge/2025/11/18/4XDOqP.Result-1.jpeg" 
@@ -312,18 +395,24 @@
                             </div>
 
                             <div class="order-1 md:order-2 md:col-span-2">
-                                <h3 class="text-2xl font-bold text-violet-400">Academic Research: Continuance Usage & Purchase Intention</h3>
+                                <h3 class="text-2xl font-bold text-violet-300">Academic Research: Continuance Usage & Purchase Intention</h3>
                                 <p class="mt-2 text-lg text-gray-400">Master's Thesis | BINUS University</p>
-                                <p class="mt-4 text-gray-300 text-left">
-                                    Master's thesis titled "The Influence of Intrinsic and Extrinsic Motivation on Players' Continuance Usage and Purchase Intention in Genshin Impact," grounding psychological theory in Information Systems Management.
-                                </p>
+                                
+                                <div class="mt-4 space-y-4">
+                                    <p class="text-gray-300 text-left">
+                                        <span class="font-bold text-violet-300">Problem Solved:</span> To scientifically validate the psychological and behavioral drivers (Intrinsic vs. Extrinsic Motivation) that lead to sustained user engagement and purchase decisions in digital environments.
+                                    </p>
+                                    <p class="text-gray-300 text-left">
+                                        <span class="font-bold text-violet-300">Solution & Thought Process:</span> I designed a comprehensive quantitative study, applying the <strong>Expectation-Confirmation Model (ECM)</strong>, and employed <strong>Structural Equation Modeling (SEM-PLS)</strong>. This robust methodology allowed me to test complex causal relationships between variables using a large dataset.
+                                    </p>
+                                </div>
                                 
                                 <div class="mt-6">
-                                    <h4 class="font-semibold text-white mb-2">Key Methodologies:</h4>
+                                    <h4 class="font-semibold text-violet-300 mb-2">Key Methodologies & Outcome:</h4>
                                     <ul class="list-disc list-inside space-y-2 text-gray-400">
-                                        <li>Statistical Modeling: Applied Exploratory Factor Analysis (EFA), Confirmatory Factor Analysis (CFA), and Structural Equation Modeling (SEM-PLS).</li>
-                                        <li>Tools: SmartPLS, R (Academic/Statistical Programming), utilizing survey data from 385 respondents.</li>
-                                        <li>Theoretical Framework: Integrated Self-Determination Theory (SDT) and Expectation-Confirmation Model (ECM).</li>
+                                        <li><span class="font-bold text-white">Outcome:</span> Successfully generated <strong>statistically significant insights</strong> to advise on game/system design, proving the ability to derive actionable business intelligence from complex data.</li>
+                                        <li><span class="font-bold text-white">Modeling:</span> Performed <strong>EFA, CFA, and SEM-PLS</strong> using survey data from <strong>385 respondents</strong> to confirm construct validity and test hypotheses.</li>
+                                        <li><span class="font-bold text-white">Tools:</span> Utilized <strong>SmartPLS and R</strong> for all data cleaning, preparation, and advanced statistical modeling.</li>
                                     </ul>
                                 </div>
                             </div>
@@ -334,7 +423,7 @@
             </div>
         </section>
 
-        <!-- 4. Skills Section (ADJUSTED FOR ALIGNED TITLES) -->
+        <!-- 6. Skills Section (ADJUSTED FOR ALIGNED TITLES) -->
         <section id="skills" class="py-16 md:py-24 bg-slate-950/90 backdrop-blur-sm">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-3xl font-bold text-center text-white sm:text-4xl">Skills & Technologies</h2>
@@ -386,7 +475,7 @@
         </section>
 
 
-        <!-- 5. AI Job Match Analyzer Section (NOW MOVED TO BOTTOM) -->
+        <!-- 7. AI Job Match Analyzer Section (NOW MOVED TO BOTTOM) -->
         <section id="analyzer" class="py-16 md:py-24 bg-slate-800/80 backdrop-blur-sm border-y border-slate-700">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-3xl font-bold text-center text-white sm:text-4xl flex items-center justify-center">
@@ -425,7 +514,7 @@
             </div>
         </section>
 
-        <!-- 6. Contact Section (Now the final content section) -->
+        <!-- 8. Contact Section (Now the final content section) -->
         <section id="contact" class="py-16 md:py-24 bg-slate-900/90 backdrop-blur-sm">
             <div class="max-w-xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <h2 class="text-3xl font-bold text-white sm:text-4xl">Get In Touch</h2>
@@ -447,8 +536,6 @@
                 </div>
             </div>
         </section>
-
-    </main>
 
     <!-- Modal for Messages (replaces alert()) -->
     <div id="message-modal" class="fixed inset-0 bg-gray-900 bg-opacity-70 hidden items-center justify-center p-4 z-[100]">
@@ -476,9 +563,13 @@
         
         const API_KEY = ""; // Placeholder for Gemini API Key
 
-        // --- Resume Data for LLM Analysis ---
+        // --- Resume Data for LLM Analysis (UPDATED) ---
         const FENDRI_PROFILE = `
             Fendri Ardiansyah is a professional with a hybrid background in HRIS/Operations and Technical/Data Modeling.
+
+            EDUCATION:
+            - Master's in Information Systems Management, BINUS University (2024 - Expected 2026). GPA: 3.93/4.00.
+            - Bachelor's in Information System, Politeknik STMI Jakarta (2019 - 2023). GPA: 3.68/4.00.
 
             CORE SKILLS & EXPERTISE:
             1. HRIS & Operations: Hands-on experience in managing end-to-end HR and Finance processes: Payroll, HRIS (Haris HRIS), employee data management (200+ staff), financial documentation, and vendor coordination. Focus on compliance and efficiency.
@@ -486,6 +577,10 @@
             3. Data Modeling & Analytics: Advanced statistical analysis using SmartPLS and R for Master's research. Expertise in EFA, CFA, and Structural Equation Modeling (SEM) to uncover complex drivers of user behavior and business decisions.
             4. Core Competencies: Payroll & Attendance Management (100% on-time), HR Administration & Digitalization (40% faster retrieval), Financial Documentation, Vendor Coordination, Interpersonal Communication.
             5. Tools: Haris HRIS, MySQL, Prisma, Microsoft Excel (VLOOKUP, PivotTable), SmartPLS, R.
+
+            PROFESSIONAL EXPERIENCE:
+            - Finance Intern at Beko Appliances Indonesia (May 2025 - Present): Supported document control, invoice documentation, and vendor coordination for payments.
+            - HR Intern at PT Mada Wikri Tunggal (Feb 2022 - Feb 2023): Processed payroll and attendance for 200+ employees using Haris HRIS and Excel. Supported onboarding and HR digitalization.
         `;
         // --- End Resume Data ---
 
@@ -513,10 +608,9 @@
             document.getElementById('message-modal').classList.remove('flex');
         }
 
-        // --- NEW FUNCTION: Markdown to HTML Conversion for Clean Output ---
+        // --- NEW FUNCTION: Markdown to HTML Conversion for Clean Output (Removes ** from LLM output) ---
         function formatGeminiOutput(markdown) {
             // 1. Convert Markdown headings (## Title) into <h4> tags
-            // This is safer than using 2> or 3> inside the card body.
             let html = markdown.replace(/^##\s*(.*)$/gm, (match, title) => {
                 return `<h4>${title.trim()}</h4>`;
             });
@@ -533,12 +627,13 @@
                  }
                  return match;
             });
+            // 3. Convert remaining bolding tokens (**) to strong tags
+            html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+            
             // Final cleanup of extra newlines and list formatting for simple paragraphs
             html = html.replace(/\n\n/g, '<p>'); // Replace double newline with paragraph tag
             html = html.replace(/\n/g, '<br>'); // Replace single newline with line break
-            html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>'); // Convert **bold** to <strong>
-            html = html.replace(/<\/ul>\s*<p>/g, '</ul><p>'); // Cleanup space after list
-            html = html.replace(/<p><\/p>/g, ''); // Remove empty paragraph tags
+            html = html.replace(/<\/ul>\s*<p>/g, '</ul><p>'); // Remove empty paragraph tags
 
             return html;
         }
@@ -586,7 +681,7 @@
             `;
 
             // Updated system prompt: asking the model to use the literal '##' so we can clean it up later.
-            const systemPrompt = "You are a specialized AI Recruitment Analyst. Your task is to provide a concise, structured, and professional match assessment between a candidate's hybrid profile (HRIS, Tech, Data) and a Job Description. You MUST use Markdown headings (##) exactly as requested in the user prompt for structure.";
+            const systemPrompt = "You are a specialized AI Recruitment Analyst. Your task is to provide a concise, structured, and professional match assessment between a candidate's hybrid profile (HRIS, Tech, Data) and a Job Description. You MUST use Markdown headings (##) exactly as requested in the user prompt for structure. Use double asterisks (**) for bolding key terms in your analysis.";
 
             const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${API_KEY}`;
             const maxRetries = 5;
